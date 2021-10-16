@@ -70,7 +70,7 @@ p {
 }
 
 .text__container {
-    width: 6rem;
+    width: 9rem;
     overflow: hidden;
 }
 
@@ -82,9 +82,13 @@ p {
 
 .text__item {
     font-family: Comic Sans MS, Comic Sans, cursive;
-    font-size: 21px;
+    font-size: 30px;
     color: rgb(100 88 63);
-    width: 6rem;
+    width: 9rem;
+}
+
+.text__content {
+    width: 9rem;
 }
 
 .bottom__container {
@@ -212,7 +216,7 @@ label, a {
     }
 }
 
-@media (max-width:440px) {
+@media (max-width:508px) {
     .bottom__container {
         flex-direction: column-reverse;
     }
@@ -226,11 +230,17 @@ label, a {
         height: 16rem;
     }
     .text__container {
-        margin-right: 56%;
+        margin-right: auto;
     }
     .active__container {
         width: 8rem;
         padding-right: 0px;
+    }
+}
+
+@media (max-width: 440px) {
+    .text__content {
+        font-size: 25px;
     }
 }
 
