@@ -1,0 +1,234 @@
+body {
+    box-sizing: border-box;
+    background-color: rgb(174 163 140);
+}
+
+p {
+    margin: 0;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.slider__container {
+    width: 70%;
+    border-radius: 5%;
+    background: rgb(142 142 142);
+    box-shadow: 0.25rem 0.25rem 2rem black;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slides__container {
+    width: 90%;
+    overflow: hidden;
+}
+
+.slides__inner {
+    width: 400%;
+    display: flex;
+    height: 54rem;
+}
+
+.slides__item {
+    width: 25%;
+    border-radius: 5%;
+    box-shadow: inset 0 0 1.25rem black;
+}
+
+
+.item__1 {
+    background: url(./assets/1.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.item__2 {
+    background: url(./assets/2.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.item__3 {
+    background: url(./assets/3.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.item__4 {
+    background: url(./assets/4.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.text__container {
+    width: 9rem;
+    overflow: hidden;
+}
+
+.text__inner {
+    display: flex;
+    width: 400%;
+    overflow: hidden;
+}
+
+.text__item {
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 2rem;
+    color: rgb(100 88 63);
+    width: 9rem;
+}
+
+.text__content {
+    width: 9rem;
+}
+
+.bottom__container {
+    padding-top: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.slider__pagination {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    display: none;
+}
+
+label, a {
+    cursor: pointer;
+}
+
+.active__container {
+    display: flex;
+    justify-content: flex-end;
+    width: 10rem;
+    gap: 10%;
+}
+
+.active__container label {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.1rem;
+    height: 2.1rem;
+}
+
+.checkmark {
+    width: .9rem;
+    height: .9rem;
+    background-color: rgb(174 163 140);
+    border-radius: 50%;
+    border: 0.1rem solid rgb(174 163 140);
+}
+
+.active__container label:hover > .checkmark {
+    background-color: rgb(99, 39, 39);
+    border: 0.1rem solid rgb(99, 39, 39);
+}
+
+.active__container label:active > .checkmark {
+    transform: scale(0.9);
+}
+
+#switch1:checked ~ .bottom__container .slider__pagination .active__container label:nth-child(1) > .checkmark {
+    background-color: rgb(92 73 73);
+}
+#switch2:checked ~ .bottom__container .slider__pagination .active__container label:nth-child(2) > .checkmark {
+    background-color: rgb(92 73 73);
+}
+#switch3:checked ~ .bottom__container .slider__pagination .active__container label:nth-child(3) > .checkmark {
+    background-color: rgb(92 73 73);
+}
+#switch4:checked ~ .bottom__container .slider__pagination .active__container label:nth-child(4) > .checkmark {
+    background-color: rgb(92 73 73);
+}
+
+
+#switch1:checked ~ .slides__inner,
+#switch1:checked ~ .bottom__container .text__container .text__inner {
+    margin-left: 0;
+}
+#switch2:checked ~ .slides__inner,
+#switch2:checked ~ .bottom__container .text__container .text__inner {
+    margin-left: -100%;
+}
+#switch3:checked ~ .slides__inner,
+#switch3:checked ~ .bottom__container .text__container .text__inner {
+    margin-left: -200%;
+}
+#switch4:checked ~ .slides__inner, 
+#switch4:checked ~ .bottom__container .text__container .text__inner {
+    margin-left: -300%;
+}
+
+.slides__inner, 
+.text__inner {
+    transition: all .5s;
+}
+
+.text__content {
+    text-align: start;
+}
+
+@media (max-width: 1500px) {
+    .slides__inner {
+        height: 33rem;
+    }
+}
+
+@media (max-width:1024px) {
+    .slides__inner {
+        height: 24rem;
+    }
+    .slider__container {
+        width: 70%;
+    }
+}
+
+@media (max-width:768px) {
+    .slides__inner {
+        height: 19rem;
+    }
+}
+
+@media (max-width:508px) {
+    .bottom__container {
+        flex-direction: column-reverse;
+    }
+    .active__container {
+        justify-content: center;
+    }
+    .slider__container {
+        width: 80%;
+    }
+    .slides__inner {
+        height: 16rem;
+    }
+    .text__container {
+        margin-right: auto;
+    }
+    .active__container {
+        width: 8rem;
+    }
+    .text__content {
+        font-size: 1.5rem;
+    }
+}
+
